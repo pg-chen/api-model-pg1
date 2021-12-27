@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <h2>預測租金</h2>
+    <br>
+     <form  action="{{url_for('postInput')}}" method="POST">  
+        <b>行政區</b>
+        <select name="District" required >
+            <option value="12" selected="True">大安區</option>
+            <option value="11" >信義區</option>
+            <option value="10" >中山區</option>
+            <option value="9" >中正區</option>
+            <option value="8" >松山區</option>
+            <option value="7" >大同區</option>
+            <option value="6" >萬華區</option>
+            <option value="5" >士林區</option>
+            <option value="4" >內湖區</option>
+            <option value="3" >南港區</option>
+            <option value="2" >北投區</option>
+            <option value="1" >文山區</option>
+        </select>
+        <br>
+        <b>物件類別</b>
+        <input type="radio" name="Object" value="2" checked="True"/>整層住家
+        <input type="radio" name="Object" value="1" />獨立套房
+        <input type="radio" name="Object" value="0" />分租套房
+        <br>
+        <b>建築類別</b>
+        <input type="radio" name="Structure" value="0" checked="True"/>公寓
+        <input type="radio" name="Structure" value="1" />電梯大樓
+        <br>
+        <b>所在樓層</b>
+        <input type="number" name="Floor">
+        <br>
+        <b>總樓高</b>
+        <input type="number" name="Building_Height">
+        <br>
+        <b>坪數</b>
+        <input type="number" name="Square" step='0.01'>
+        <br>
+        <b>提供家具</b>
+        <br>
+        <input type="checkbox" value="0" name="my_checkbox" checked="True" />床
+        <input type="checkbox" value="0" name="my_checkbox" />桌子
+        <input type="checkbox" value="0" name="my_checkbox" />椅子
+        <input type="checkbox" value="0" name="my_checkbox" />電視
+        <input type="checkbox" value="0" name="my_checkbox" />熱水器
+        <input type="checkbox" value="0" name="my_checkbox" />冷氣
+        <input type="checkbox" value="0" name="my_checkbox" />沙發
+        <br>
+        <input type="checkbox" value="0" name="my_checkbox" />洗衣機
+        <input type="checkbox" value="0" name="my_checkbox" />衣櫃
+        <input type="checkbox" value="0" name="my_checkbox" />冰箱
+        <input type="checkbox" value="0" name="my_checkbox" />網路
+        <input type="checkbox" value="0" name="my_checkbox" />第四臺
+        <input type="checkbox" value="0" name="my_checkbox" />天然瓦斯
+        <br>
+        <b>經緯度</b> <br>
+        緯度<input type="number" min='23' max='26'step='1e-15' name="lat">
+        經度<input type="number" min='120' max='123'step='1e-15' name="lnt">
+        
+        <br>
+        <button type="submit">預測房價</button>
+    </form>
+    <br>
+    <!-- {{ prediction_display_area }} -->
+</div>
+
+</body>
+</html>
